@@ -1,0 +1,541 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() => runApp(TabsApp());
+
+class TabsApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Tabs App',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+
+  List<Widget> containers = [
+    Container(
+      color: Colors.black87,
+    ),
+    Container(
+      color: Colors.blue,
+    ),
+    Container(
+      color: Colors.deepPurple,
+    )
+  ];
+
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 8,
+          title: Text('Whatsapp', style: TextStyle(decorationThickness: 0.5,fontWeight: FontWeight.bold),),
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(
+                child: Text('Chats',style: TextStyle(fontWeight: FontWeight.w600),),
+              ),
+              Tab(
+                child: Text('Status',style: TextStyle(fontWeight: FontWeight.w500),),
+              ),
+              Tab(
+                text: 'Calls',
+              ),
+            ],
+          ),
+        ),
+        body: ListView(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/download.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Robert Downey',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('12:30',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('Im dead buddy, Love you 3000 find a new Iron man ',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/dnld12.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Captain jack Sparrow',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('12:30',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('Please help me finding my Black pearl ',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/dnld231.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Harry potter',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('12:30',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('Please return my wand',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/dnldthanos.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Thanos',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('11:20',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('I will return soon ',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/dnldma.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Mukesh Ambani',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('11:05',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('If you help me I will be the Richest person on planet',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/dnldjoker.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Joker(Old frnd)',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('12:30',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('The only sensible way to live in this world is without rules ',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 15,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                          )
+                        ]
+                    ),
+                    child: CircleAvatar(
+                      radius: 35,
+                      backgroundImage: AssetImage('assets/download.jpg'),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.65,
+                    padding: EdgeInsets.only(left: 20,),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text('Robert Downey',style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),),
+                            Text('12:30',style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black54,
+                            ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Text('Im dead buddy, Love you 3000 find a new Iron man ',
+                            style: TextStyle(
+                                fontSize: 13,
+                                color: Colors.black54
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ),
+
+                ],
+              ),
+            ),
+          ],
+
+        ),
+      ),
+    );
+  }
+}
+
